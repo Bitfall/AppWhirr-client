@@ -1,0 +1,14 @@
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\ResolveAssemblyReference.cache
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIconTester.FormIconBrowser.resources
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIconTester.Form2.resources
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIconTester.Properties.Resources.resources
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIcon.csproj.GenerateResource.Cache
+E:\Downloads\IconLib_src\MultiIcon\bin\Debug\Resources\EmptyDll.dll
+E:\Downloads\IconLib_src\MultiIcon\bin\Debug\MultiIcon.exe
+E:\Downloads\IconLib_src\MultiIcon\bin\Debug\MultiIcon.pdb
+E:\Downloads\IconLib_src\MultiIcon\bin\Debug\IconLib.dll
+E:\Downloads\IconLib_src\MultiIcon\bin\Debug\IconLib.pdb
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIcon.exe
+E:\Downloads\IconLib_src\MultiIcon\obj\Debug\MultiIcon.pdb
+E:\Programming\EasyPortableApps\bitbucket\UsefulScriptsAndTools\IconLib_src\MultiIcon\obj\Debug\MultiIcon.exe
+E:\Programming\EasyPortableApps\bitbucket\UsefulScriptsAndTools\IconLib_src\MultiIcon\obj\Debug\MultiIcon.pdb

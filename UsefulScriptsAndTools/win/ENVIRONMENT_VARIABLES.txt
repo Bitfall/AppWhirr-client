@@ -1,0 +1,18 @@
+
+# Required and Optional EnvironmentVariables
+note: you can use the related .bat scripts, but edit them before run!!
+
+
+# Required EnvironmentVariables to compile
+note: you can use the related SetOptionalEnvironmentVariables.bat, but edit it before you use it!!
+
+To successfully compile the project some EnvironmentVariables have to be set:
+* APPWHIRR_PROJECT_SOURCE_ROOT_DIR: have to point to the root source dir - e.g.: E:\Programming\EasyPortableApps\bitbucket\Source\EasyAppsClientProject\EasyAppsClientProject
+* QT_SRC_REFERENCE_ROOT_DIR: have to point to the Qt Source root directory - e.g.: E:/QtSDK/QtSources/4.7.3/src
+
+
+# Optional but useful EnvironmentVariables
+note: you can use the related SetOptionalEnvironmentVariables.bat, but edit it before you use it!!
+
+## To allow Growl notification about project build finish Growl for Windows have to be installed, and additional environment variable have to be set:
+* GROWL_NOTIFY_EXE_PATH: have to point to the growlnotify.exe, which is in the Growl for Windows install directory - e.g.: C:\Program Files (x86)\Growl for Windows\growlnotify.exe

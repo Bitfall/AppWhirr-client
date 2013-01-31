@@ -1,0 +1,9 @@
+* ApplicationIconGetterAndSaver: it's completely my project. It can only get the 48x48 size icon from exe, but it will up-scale it to the desired size.
+-> great if the exe's biggest icon is 48x48
+-> and also a reference project
+? written in C#
+
+* MakeAppToAppWhirrReady: contains 2 projects 
+** the original icon-lib project from codeproject, which can present and export icons from almost any file format, but it's a bit too heavy
+** and the AppWhirr-ified version, modified by me, which uses the code of the original, but simplified and extended with AppWhirr specific things
+-> the AppWhirr-ified version can be used to auto-create an AppWhirr specific app folder and related xmls, images, ...

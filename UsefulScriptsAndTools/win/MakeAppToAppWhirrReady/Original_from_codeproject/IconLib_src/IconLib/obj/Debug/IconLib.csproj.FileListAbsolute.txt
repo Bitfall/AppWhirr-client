@@ -1,0 +1,8 @@
+E:\Downloads\IconLib_src\IconLib\obj\Debug\ResolveAssemblyReference.cache
+E:\Downloads\IconLib_src\IconLib\obj\Debug\IconLib.System.Drawing.IconLib.Resource.resources
+E:\Downloads\IconLib_src\IconLib\obj\Debug\IconLib.csproj.GenerateResource.Cache
+E:\Downloads\IconLib_src\IconLib\bin\Debug\Resources\EmptyDll.dll
+E:\Downloads\IconLib_src\IconLib\bin\Debug\IconLib.dll
+E:\Downloads\IconLib_src\IconLib\bin\Debug\IconLib.pdb
+E:\Downloads\IconLib_src\IconLib\obj\Debug\IconLib.dll
+E:\Downloads\IconLib_src\IconLib\obj\Debug\IconLib.pdb

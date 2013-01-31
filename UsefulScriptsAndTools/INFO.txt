@@ -1,0 +1,2 @@
+the easyAppsXmlDataCollector.py appXml creator python script is moved to win/IconFromExe/AppWhirr_version
+-> located in the scripts folder

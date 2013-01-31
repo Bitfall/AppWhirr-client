@@ -1,0 +1,1 @@
+every python script has to have a .bat which will launch it in the required directory and with required settings, don't run the python scripts directly, or run them carefully!!

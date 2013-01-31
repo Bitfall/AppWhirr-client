@@ -1,0 +1,1083 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,8,1,6
+ PRODUCTVERSION 0,8,1,6
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.gvhsoftware.org\0"
+            VALUE "CompanyName", "Geert van Horrik Software\0"
+            VALUE "FileDescription", "Update your application\0"
+            VALUE "FileVersion", "0.8.1.6\0"
+            VALUE "InternalName", "Updater\0"
+            VALUE "LegalCopyright", "Copyright (C) Geert van Horrik Software 2004-2006\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Updater.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Updater\0"
+            VALUE "ProductVersion", "0.8.1.6\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SILENT DIALOG DISCARDABLE  0, 0, 153, 22
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "silent mode dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This dialog is needed to receive messages.",
+                    lblExplanation,7,7,139,8
+END
+
+IDD_FULL_PROPPAGE_WELCOME DIALOG DISCARDABLE  0, 0, 276, 190
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "[EXPLANATION]",lblExplanation,116,38,159,152
+    CONTROL         "[TITLE]",lblTitle,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,
+                    116,6,159,20
+END
+
+IDD_FULL_PROPPAGE_INSTALL DIALOG DISCARDABLE  0, 0, 275, 134
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Action progress: [ACTION NAME]",lblFileProgress,-1,0,
+                    220,8
+    CONTROL         "",prgFileProgress,"msctls_progress32",WS_BORDER,0,12,
+                    245,14
+    LTEXT           "Total progress:",lblTotalProgress,-1,35,220,8
+    CONTROL         "",prgTotalProgress,"msctls_progress32",WS_BORDER,0,47,
+                    245,14
+    LTEXT           "[EXPLANATION]",lblExplanation,0,70,275,64
+    RTEXT           "[##%]",lblFileProgressProcent,248,14,27,9
+    RTEXT           "[##%]",lblTotalProgressProcent,248,49,27,9
+END
+
+IDD_FULL_PROPPAGE_FINISH DIALOG DISCARDABLE  0, 0, 275, 182
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "[EXPLANATION]",lblExplanation,116,9,159,111
+    CONTROL         "[SHORTCUTS]",chkCreateShortcuts,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,116,140,159,10
+    CONTROL         "[USERDATA]",chkUserData,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,116,154,159,10
+END
+
+IDD_FULL_PROPPAGE_DOWNLOAD DIALOG DISCARDABLE  0, 0, 275, 134
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "File progress: [FILENAME]",lblFileProgress,0,0,245,8
+    CONTROL         "",prgFileProgress,"msctls_progress32",WS_BORDER,0,12,
+                    245,14
+    RTEXT           "[##%]",lblFileProgressProcent,250,14,25,9
+    LTEXT           "Total progress:",lblTotalProgress,0,35,245,8
+    CONTROL         "",prgTotalProgress,"msctls_progress32",WS_BORDER,0,47,
+                    245,14
+    RTEXT           "[##%]",lblTotalProgressProcent,250,49,25,9
+    LTEXT           "[EXPLANATION]",lblExplanation,0,70,275,64
+END
+
+IDD_FULL_PROPPAGE_CHECK DIALOG DISCARDABLE  0, 0, 275, 142
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "[STATUS]",lblStatus,0,69,275,8
+    LTEXT           "[EXPLANATION]",lblExplanation,0,0,275,67
+    LTEXT           "[FEATURES]",lblFeatures,0,82,275,10,NOT WS_VISIBLE
+    LTEXT           "[FEATURE1]",lblFeature1,0,93,275,9,NOT WS_VISIBLE
+    LTEXT           "[FEATURE2]",lblFeature2,0,102,275,9,NOT WS_VISIBLE
+    LTEXT           "[FEATURE3]",lblFeature3,0,112,275,9,NOT WS_VISIBLE
+    LTEXT           "[FEATURE4]",lblFeature4,0,122,275,9,NOT WS_VISIBLE
+    LTEXT           "[FEATURE5]",lblFeature5,0,132,275,9,NOT WS_VISIBLE
+END
+
+IDD_FULL_PROPPAGE_ROLLBACK DIALOG DISCARDABLE  0, 0, 275, 134
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Total progress: [ACTION NAME]",lblTotalProgress,0,0,245,
+                    8
+    CONTROL         "",prgTotalProgress,"msctls_progress32",WS_BORDER,0,12,
+                    245,14
+    LTEXT           "[EXPLANATION]",lblExplanation,0,35,275,99
+    RTEXT           "[##%]",lblTotalProgressProcent,248,14,27,9
+END
+
+IDD_HIDDEN DIALOG DISCARDABLE  0, 0, 153, 22
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Hidden mode"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This dialog is needed to receive messages.",
+                    lblExplanation,7,7,139,8
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 333, 199
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "-"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",btnOK,273,178,50,14
+    LTEXT           "Updater is developed by [developer], 2004 - 2005.",
+                    lblDeveloper,9,66,314,10
+    LTEXT           "website: ",lblWebsite,9,78,37,9
+    LTEXT           "Updater version:",lblUpdaterVersion,9,92,114,9
+    LTEXT           "Language pack version:",lblLanguageVersion,9,119,114,9
+    EDITTEXT        txtUpdaterVersion,9,103,114,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        txtLanguageVersion,9,130,114,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         139,picLogo,"Static",SS_BITMAP,0,0,333,31
+    LTEXT           "Language used:",lblLanguageUsed,9,147,114,9
+    EDITTEXT        txtLanguageUsed,9,158,114,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "[website]",lblHyperlink,53,79,70,9,SS_NOTIFY
+    LTEXT           "Special thanks to:",lblSpecialThanks,133,78,190,8
+    CONTROL         "List1",lstThanks,"SysListView32",LVS_REPORT | WS_BORDER,
+                    133,87,190,84
+END
+
+IDD_FULL_PROPPAGE_SELECTUPDATE DIALOG DISCARDABLE  0, 0, 269, 134
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",treeUpdateSelection,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | 
+                    TVS_CHECKBOXES | TVS_FULLROWSELECT | WS_BORDER | 
+                    WS_TABSTOP,0,46,169,88
+    LTEXT           "[TITLE]",lblDescriptionTitle,179,45,90,19
+    LTEXT           "[DESCRIPTION]",lblDescription,179,71,90,52
+    LTEXT           "[EXPLANATION]",lblExplanation,0,0,269,29
+    LTEXT           "[MORE INFO]",lblMoreInfo,179,124,90,10
+END
+
+IDD_FULL_PROPPAGE_LICENSE DIALOG DISCARDABLE  0, 0, 275, 142
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        txtLicense,0,0,275,113,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP
+    CONTROL         "[AGREE]",rdLicenceAgree,"Button",BS_AUTORADIOBUTTON | 
+                    BS_NOTIFY | WS_GROUP | WS_TABSTOP,0,119,275,8
+    CONTROL         "[NOT AGREE]",rdLicenceNotAgree,"Button",
+                    BS_AUTORADIOBUTTON | BS_NOTIFY | WS_TABSTOP,0,134,275,8
+END
+
+IDD_AUTHENTICATION DIALOGEX 0, 0, 267, 129
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        txtUsername,95,57,162,12,ES_AUTOHSCROLL
+    EDITTEXT        txtPassword,95,74,162,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",btnOK,151,108,50,14
+    PUSHBUTTON      "Cancel",btnCancel,207,108,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,247,10
+    LTEXT           "[USERNAME]",lblUsername,10,59,79,8
+    LTEXT           "[PASSWORD]",lblPassword,10,76,79,8
+    CONTROL         "[SAVE CREDENTIALS]",chkSaveCredentials,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,95,91,162,12
+    CONTROL         168,bmpLogo,"Static",SS_BITMAP,0,0,267,36
+    LTEXT           "[TITLE]",lblTitle,10,0,214,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_FULL_PROPPAGE_HTMLMESSAGE DIALOG DISCARDABLE  0, 0, 275, 134
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "",htmlMessage,"{8856F961-340A-11D0-A96B-00C04FD705A2}",
+                    WS_TABSTOP,0,0,275,134
+END
+
+IDD_FULL_PROPPAGE_PROTECTION DIALOG DISCARDABLE  0, 0, 275, 142
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "[EXPLANATION]",lblExplanation,0,0,275,40
+    LTEXT           "[CHECK LICENSE]",lblCheckLicense,0,49,275,11
+    LTEXT           "[CHECK FILES]",lblCheckFiles,0,62,275,11
+    LTEXT           "[GETLICENSE]",lblGetLicense,1,100,274,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SILENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_FULL_PROPPAGE_WELCOME, DIALOG
+    BEGIN
+        RIGHTMARGIN, 275
+        VERTGUIDE, 116
+        HORZGUIDE, 38
+    END
+
+    IDD_FULL_PROPPAGE_INSTALL, DIALOG
+    BEGIN
+        VERTGUIDE, 245
+        HORZGUIDE, 12
+        HORZGUIDE, 35
+        HORZGUIDE, 47
+        HORZGUIDE, 70
+    END
+
+    IDD_FULL_PROPPAGE_FINISH, DIALOG
+    BEGIN
+        VERTGUIDE, 116
+        HORZGUIDE, 9
+        HORZGUIDE, 120
+        HORZGUIDE, 140
+    END
+
+    IDD_FULL_PROPPAGE_DOWNLOAD, DIALOG
+    BEGIN
+        VERTGUIDE, 245
+        HORZGUIDE, 12
+        HORZGUIDE, 35
+        HORZGUIDE, 47
+        HORZGUIDE, 70
+    END
+
+    IDD_FULL_PROPPAGE_CHECK, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 138
+        HORZGUIDE, 67
+    END
+
+    IDD_FULL_PROPPAGE_ROLLBACK, DIALOG
+    BEGIN
+        VERTGUIDE, 245
+        HORZGUIDE, 12
+        HORZGUIDE, 35
+    END
+
+    IDD_HIDDEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 9
+        RIGHTMARGIN, 323
+        VERTGUIDE, 123
+        VERTGUIDE, 133
+        BOTTOMMARGIN, 192
+        HORZGUIDE, 46
+        HORZGUIDE, 55
+    END
+
+    IDD_FULL_PROPPAGE_SELECTUPDATE, DIALOG
+    BEGIN
+        VERTGUIDE, 169
+        VERTGUIDE, 179
+        HORZGUIDE, 35
+        HORZGUIDE, 45
+    END
+
+    IDD_AUTHENTICATION, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 95
+        VERTGUIDE, 257
+        BOTTOMMARGIN, 122
+        HORZGUIDE, 35
+        HORZGUIDE, 42
+        HORZGUIDE, 52
+        HORZGUIDE, 57
+        HORZGUIDE, 78
+        HORZGUIDE, 90
+        HORZGUIDE, 95
+        HORZGUIDE, 107
+        HORZGUIDE, 112
+        HORZGUIDE, 124
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_SILENT_POPUP MENU DISCARDABLE 
+BEGIN
+    POPUP "IDR_POPUP"
+    BEGIN
+        MENUITEM "About Updater...",            ID_SILENT_POPUP_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_SILENT_POPUP_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGO_SMALL          BITMAP  DISCARDABLE     "res\\logos.bmp"
+IDB_ABOUT               BITMAP  DISCARDABLE     "res\\about.bmp"
+IDB_LOGO_LARGE          BITMAP  DISCARDABLE     "res\\logol.bmp"
+IDB_UPDATER             BITMAP  DISCARDABLE     "res\\updater.bmp"
+IDB_UPDATER_NEG         BITMAP  DISCARDABLE     "res\\updater_neg.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_UPDATER             ICON    DISCARDABLE     "res\\Updater.ico"
+IDI_RESULT_ERROR        ICON    DISCARDABLE     "res\\Result_error.ico"
+IDI_RESULT_GOOD         ICON    DISCARDABLE     "res\\Result_good.ico"
+IDI_CHECK1              ICON    DISCARDABLE     "res\\Check icons\\Check_1.ico"
+IDI_CHECK2              ICON    DISCARDABLE     "res\\Check icons\\Check_2.ico"
+IDI_CHECK3              ICON    DISCARDABLE     "res\\Check icons\\Check_3.ico"
+IDI_CHECK4              ICON    DISCARDABLE     "res\\Check icons\\Check_4.ico"
+IDI_CHECK5              ICON    DISCARDABLE     "res\\Check icons\\Check_5.ico"
+IDI_DOWNLOAD1           ICON    DISCARDABLE     "res\\Download icons\\Download_1.ico"
+IDI_DOWNLOAD2           ICON    DISCARDABLE     "res\\Download icons\\Download_2.ico"
+IDI_DOWNLOAD3           ICON    DISCARDABLE     "res\\Download icons\\Download_3.ico"
+IDI_DOWNLOAD4           ICON    DISCARDABLE     "res\\Download icons\\Download_4.ico"
+IDI_INSTALL1            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_1_1.ico"
+IDI_INSTALL2            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_2_1.ico"
+IDI_INSTALL3            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_3_1.ico"
+IDI_INSTALL4            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_4_1.ico"
+IDI_INSTALL5            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_5_1.ico"
+IDI_INSTALL6            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_6_1.ico"
+IDI_INSTALL7            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_7_1.ico"
+IDI_INSTALL8            ICON    DISCARDABLE     "res\\Install icons\\v2\\Install_8_1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BIN
+//
+
+IDR_UPDATERCOPY         BIN     DISCARDABLE     "res\\UpdaterCopy.exe"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FULL_PROPPAGE_HTMLMESSAGE DLGINIT
+BEGIN
+    htmlMessage, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x2aaf, 0x0000, 0x1688, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0002, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GENERAL_OK          "OK"
+    IDS_GENERAL_CANCEL      "Cancel"
+    IDS_GENERAL_YES         "Yes"
+    IDS_GENERAL_NO          "No"
+    IDS_GENERAL_NEXT        "Next"
+    IDS_GENERAL_FINISH      "Finish"
+    IDS_GENERAL_TITLE       "Updater - Update %s"
+    IDS_QUESTION_CLOSE      "Are you sure you want to stop updating %s?"
+    IDS_QUESTION_CLOSEAPPLICATION 
+                            "%s needs to be closed before installing the updates.\nDo you want to close %s now? (be sure to save your work first)"
+    IDS_QUESTION_DELETEFILE "Are you sure you want to delete %s?"
+    IDS_QUESTIONTITLE_SURE  "Are you sure?"
+    IDS_SILENT_CHECKVERSION "Checking for new version..."
+    IDS_SILENT_DOWNLOAD     "Downloading files..."
+    IDS_SILENT_INSTALL      "Installing..."
+    IDS_SILENT_WELCOME      "Welcome to Updater!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SILENT_NOTIFICATION "Updater notification"
+    IDS_SILENT_FINISH       "You are ready!\nNew version: %s"
+    IDS_SILENT_ERROR        "Error"
+    IDS_SILENT_ROLLBACK     "Rolling back changes..."
+    IDS_ERROR_UNKNOWN       "Unknown error"
+    IDS_ERROR_NOCONNECTION  "No connection to internet available"
+    IDS_ERROR_SERVER        "Can't connect to server"
+    IDS_ERROR_NODISKSPACE   "Insufficient diskspace! %d mb needed"
+    IDS_ERROR_FILENOTFOUND  "File %s not found"
+    IDS_ERROR_COPYFILE      "Can't copy file %s"
+    IDS_ERROR_DELETEFILE    "Can't delete file %s"
+    IDS_ERROR_RUNFILE       "Can't execute file %s"
+    IDS_ERROR_CLOSEAPP      "You need to close %s before installing updates.\nPlease try again later"
+    IDS_ERROR_FILECORRUPT   "File %s is corrupt"
+    IDS_ERROR_NONEWVERSION  "No new version available"
+    IDS_ERROR_WRITEFILE     "Can't write to file %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FULL_WELCOME_EXPLANATION 
+                            "Updater is about to check for new updates for %s.\n\nPlease follow the instructions, and be sure you are connected to the internet.\n\nIf you are ready, press next, and Updater will check if there is a new version available."
+    IDS_FULL_WELCOME_TITLE  "Welcome to Updater!"
+    IDS_FULL_CHECKVERSION_TITLE "Check for new version"
+    IDS_FULL_DOWNLOAD_TITLE "Download files"
+    IDS_FULL_INSTALL_TITLE  "Install updates"
+    IDS_FULL_FINISH_TITLE   "Finished"
+    IDS_FULL_ROLLBACK_TITLE "Rolling back changes"
+    IDS_FULL_CHECKVERSION_EXPLANATION 
+                            "Updater is checking if there is a new version available for %s.\n\nIf there is no new version available, the wizard will stop, because you don't need a newer version.\n\nIf there is a new version available, you can click next to start downloading the files."
+    IDS_FULL_FILEPROGRESS   "File progress: %s"
+    IDS_FULL_TOTALPROGRESS  "Total progress:"
+    IDS_FULL_FINISH_EXPLANATION 
+                            "You are ready!\n\n%s is updated to the newest version, and you can start using %s again.\n\nTo be sure you always have the newest version, run Updater once in a month to check for new versions.\n\nThanks for using Updater!"
+    IDS_FULL_DOWNLOAD_EXPLANATION 
+                            "Updater is downloading new files that are needed to update %s.\n\nThis process can take a long time, depending on your internet connection speed.\n\nIf Updater is ready downloading the files, you can press next to install the update."
+    IDS_FULL_INSTALL_EXPLANATION 
+                            "Now, Updater is installing the files and executing some actions.\n\nThis can take a while. You can always cancel the process, but then it is possible that %s will not work properly anymore.\n\nIt is possible that Updater asks for confirmation of some steps.\n\nIf installation progress is ready, please click next."
+    IDS_FULL_CHECKVERSION_FEATURES "New features in this version"
+    IDS_FULL_ROLLBACK_EXPLANATION 
+                            "Updater is rolling back the changes so your old version will keep working. If an error occurred, please try to update again."
+    IDS_ACTION_COPY         "%s (copy)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_DELETE       "%s (delete)"
+    IDS_ACTION_RUN          "%s (execute)"
+    IDS_ACTION_REGISTRY     "Registry settings"
+    IDS_ACTION_INI          "Ini settings"
+    IDS_STATUS_CONNECTINGTOSERVER "Connecting to server..."
+    IDS_STATUS_NONEWVERSION "No new version available..."
+    IDS_STATUS_NEWVERSION   "New version (%s) available!"
+    IDS_STATUS_INITIALIZING "Initialising..."
+    IDS_ERROR_UNZIPFILE     "Can't unzip file %s"
+    IDS_ACTION_UNZIP        "%s (unzip)"
+    IDS_ACTION_BACKUP       "%s (backup)"
+    IDS_ABOUT_TITLE         "About Updater"
+    IDS_ABOUT_UPDATERVERSION "Updater version:"
+    IDS_ABOUT_DEVELOPEDBY   "Updater is developed by"
+    IDS_ABOUT_WEBSITE       "Website:"
+    IDS_ABOUT_LANGUAGEVERSION "Language pack version:"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUT_TRANSLATEDBY  "translated by"
+    IDS_ABOUT_LANGUAGEUSED  "Language used:"
+    IDS_ABOUT_SPECIALTHANKS "Special thanks to:"
+    IDS_ABOUT_THANKS_NAME   "Name"
+    IDS_ABOUT_THANKS_REASON "Reason"
+    IDS_FULL_CHECKVERSION_SUBTITLE "Checking the internet for a new version"
+    IDS_FULL_DOWNLOAD_SUBTITLE "Downloading files from the internet"
+    IDS_FULL_INSTALL_SUBTITLE "Performing actions to update %s"
+    IDS_FULL_FINISH_SUBTITLE "Finished updating %s"
+    IDS_FULL_ROLLBACK_SUBTITLE "Performing actions to restore %s"
+    IDS_FULL_SELECTUPDATE_EXPLANATION 
+                            "There are several updates available for %s. Please select the updates you wish to download and install. When you click on an item, the description will appear at the right of the tree.\n\nIf you have selected the updates, please click next."
+    IDS_FULL_SELECTUPDATE_TITLE "Select update"
+    IDS_FULL_SELECTUPDATE_SUBTITLE 
+                            "Select the updates you wish to download and install"
+    IDS_FULL_LICENSE_TITLE  "End-user license agreement"
+    IDS_FULL_LICENSE_SUBTITLE 
+                            "Please read the following license agreement carefully"
+    IDS_FULL_LICENSE_AGREE  "I accept the terms in the license agreement"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FULL_LICENSE_NOTAGREE 
+                            "I do not accept the terms in the license agreement"
+    IDS_AUTHENTICATION_EXPLANATION 
+                            "Authentication for the proxy server is needed in order to download the files.\n\nPlease enter your proxy username and password in the fields below."
+    IDS_AUTHENTICATION_USERNAME "Username"
+    IDS_AUTHENTICATION_PASSWORD "Password"
+    IDS_AUTHENTICATION_TITLE "Authentication needed"
+    IDS_FULL_HTMLMESSAGE_TITLE "Product/company information"
+    IDS_FULL_HTMLMESSAGE_SUBTITLE 
+                            "Please take your time to read the product/company information"
+    IDS_FULL_SELECTUPDATE_MOREINFO "More information..."
+    IDS_CONFIRMATION_STOPUPDATING_TITLE "Stop updating"
+    IDS_CONFIRMATION_STOPUPDATING_EXPLANATION 
+                            "This update may be required for %s. If you select yes, you can update %s at a later time.\n\nDo you want to stop and cancel the update process for %s?"
+    IDS_CONFIRMATION_DELETEFILE_TITLE "Delete file"
+    IDS_CONFIRMATION_DELETEFILE_EXPLANATION 
+                            "The file %s needs to be deleted.\n\nIf you select No, the file will not be deleted from your system. However, this may infect the behaviour of %s.\n\nDo you want to delete %s now? "
+    IDS_CONFIRMATION_CLOSEAPPLICATION_TITLE "Close application"
+    IDS_CONFIRMATION_CLOSEAPPLICATION_EXPLANATION 
+                            "%s needs to be closed before installing the updates.\n\nIf you select No, you will have to update %s at a later time.\n\nAny unsaved changes to open documents may be lost when proceeding!\n\nDo you want to close %s now? "
+    IDS_CONFIRMATION_TITLE  "Confirmation required"
+    IDS_ERROR_TITLE         "Error"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_MORE          "More"
+    IDS_ERROR_UNKNOWN_TITLE "Unknown error"
+    IDS_ERROR_UNKNOWN_EXPLANATION "An unknown error has occurred."
+    IDS_ERROR_NOCONNECTION_TITLE "No connection available"
+    IDS_ERROR_NOCONNECTION_EXPLANATION 
+                            "There is no connection to the internet available."
+    IDS_ERROR_NOCONNECTION_MORE 
+                            "First check if you are connected to the internet to fix this problem.\n\nIf the problem is not fixed even when connected to the internet, disable the checkconnection setting of Updater."
+    IDS_ERROR_SERVER_TITLE  "Can't connect to server"
+    IDS_ERROR_SERVER_EXPLANATION "Can't connect to the server."
+    IDS_ERROR_SERVER_MORE   "Probably the server that is hosting the update information is offline or not reachable.\n\nPlease try again at a later time."
+    IDS_ERROR_NODISKSPACE_TITLE "Insufficient diskspace"
+    IDS_ERROR_NODISKSPACE_EXPLANATION 
+                            "Insufficient diskspace. There is %d mb needed."
+    IDS_ERROR_NODISKSPACE_MORE 
+                            "Clean up some files on the hard-disk you don't use anymore to create some free space."
+    IDS_ERROR_FILENOTFOUND_TITLE "File not found"
+    IDS_ERROR_FILENOTFOUND_EXPLANATION "File %s not found."
+    IDS_ERROR_FILENOTFOUND_MORE 
+                            "The file is not available on the server.\n\nPlease contact the developer of %s to solve this problem."
+    IDS_ERROR_COPYFILE_TITLE "Can't copy file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_COPYFILE_EXPLANATION "Can't copy file %s."
+    IDS_ERROR_COPYFILE_MORE "There can be several reasons for this error. The file is not available or the file is in use by another application."
+    IDS_ERROR_DELETEFILE_TITLE "Can't delete file"
+    IDS_ERROR_DELETEFILE_EXPLANATION "Can't delete file %s."
+    IDS_ERROR_DELETEFILE_MORE 
+                            "There can be several reasons for this error. The file is not available or the file is in use by another application."
+    IDS_ERROR_RUNFILE_TITLE "Can't execute file"
+    IDS_ERROR_RUNFILE_EXPLANATION "Can't execute file %s."
+    IDS_ERROR_RUNFILE_MORE  "Probably the file does not exist on your system."
+    IDS_ERROR_CLOSEAPP_TITLE "Can't close application"
+    IDS_ERROR_CLOSEAPP_EXPLANATION 
+                            "You need to close %s before installing the updates.\n\nPlease try again later"
+    IDS_ERROR_CLOSEAPP_MORE "Before installing, %s must be closed because Updater must overwrite the file.\n\nClose the application first and run Updater again."
+    IDS_ERROR_FILECORRUPT_TITLE "File corrupt"
+    IDS_ERROR_FILECORRUPT_EXPLANATION "File %s is corrupt."
+    IDS_ERROR_FILECORRUPT_MORE 
+                            "Updater expects a specific file format for this file. This format can't be found in the file, so it is probably corrupt.\n\nPlease contact the developer of %s to solve this problem."
+    IDS_ERROR_WRITEFILE_TITLE "Can't write to file"
+    IDS_ERROR_WRITEFILE_EXPLANATION "Can't write to file %s."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_WRITEFILE_MORE 
+                            "Probably this file is in use by another application.\n\nPlease close the other applications using the file and try again."
+    IDS_ERROR_UNZIPFILE_TITLE "Can't unzip file"
+    IDS_ERROR_UNZIPFILE_EXPLANATION "Can't unzip file %s."
+    IDS_ERROR_UNZIPFILE_MORE 
+                            "Probably the zip file is corrupt. Try to open the file with another application to see if it is corrupt. If the file is not corrupt, please contact the developer of %s."
+    IDS_INFORMATION_TITLE   "Information"
+    IDS_INFORMATION_RESTARTSYSTEM_TITLE "Restart system"
+    IDS_INFORMATION_RESTARTSYSTEM_EXPLANATION 
+                            "To complete the update of %s, the system needs to be restarted.\n\nWhen you close this dialog, the system will restart."
+    IDS_FULL_FINISH_CREATESHORTCUTS "Create shortcuts for %s"
+    IDS_FULL_PROTECTION_TITLE "Software license protection"
+    IDS_FULL_PROTECTION_SUBTITLE "Checking system for valid software license"
+    IDS_FULL_PROTECTION_EXPLANATION 
+                            "Updater is checking %s to see if there is a valid license available. No data will be send to the developer of %s. If there is a valid license available, Updater will continue."
+    IDS_FULL_PROTECTION_CHECKLICENSE "Check license"
+    IDS_FULL_PROTECTION_CHECKFILES "Check files"
+    IDS_ERROR_PROTECTION_TITLE "Protection error"
+    IDS_ERROR_PROTECTION_EXPLANATION 
+                            "It seems there is no valid license available for %s or the product is patched by a crack."
+    IDS_ERROR_PROTECTION_MORE 
+                            "If you have a valid license and this message should not be visible, please contact the developer of %s."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FULL_PROTECTION_GETLICENSE "Click here to obtain a valid license"
+    IDS_ERROR_PROTECTION    "No valid license available"
+    IDS_ACTION_REGISTER     "%s (register)"
+    IDS_ACTION_SETFILEATTR  "%s (set file attributes)"
+    IDS_CONFIRMATION_REGISTER_TITLE "Register file"
+    IDS_CONFIRMATION_REGISTER_EXPLANATION 
+                            "The file %s needs to be registered.\n\nIf you select No, the file will not be registered on your system. However, this may infect the behaviour of %s.\n\nDo you want to register %s now? "
+    IDS_WARNING_REGISTER    "Unable to register file %s"
+    IDS_WARNING_TITLE       "Warning"
+    IDS_WARNING_REGISTER_TITLE "Unable to register file"
+    IDS_WARNING_REGISTER_EXPLANATION 
+                            "Updater is unable to register %s on your system.\n\nAsk the administrator to register the file manually or register the dll yourself."
+    IDS_POPUP_BITMAPS       "Popup menu bitmaps"
+    IDS_RESTORE_TITLE       "Updater - Restore"
+    IDS_RESTORE_EXPLANATION "You are about to restore the previous version of %s. Only restore to an older version if the current update contains bugs or the developer asked you to do so.\n\nYou can't cancel or undo the restore progress. %s will be restored to version %s."
+    IDS_RESTORE_PROGRESS    "Restore progress:"
+    IDS_RESTORE_RESTORE     "Restore"
+    IDS_RESTORE_CLOSE       "Close"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROXY_TITLE         "Updater proxy settings"
+    IDS_PROXY_DIRECT        "Direct connection to the internet"
+    IDS_PROXY_AUTODETECT    "Auto-detect proxy settings (recommended)"
+    IDS_PROXY_MANUAL        "Manual proxy configuration:"
+    IDS_PROXY_HTTP          "HTTP Proxy:"
+    IDS_PROXY_FTP           "FTP Proxy:"
+    IDS_PROXY_AUTOCONFIGURL "Automatic proxy configuration URL:"
+    IDS_LOGVIEWER_TITLE     "Updater Log Viewer"
+    IDS_LOGVIEWER_NOLOG     "No Updater log is found for %s."
+    IDS_AUTHENTICATION_SAVECREDENTIALS "Save credentials"
+    IDS_CLOSEAPPLICATION_TITLE "Close %s"
+    IDS_CLOSEAPPLICATION_EXPLANATION 
+                            "Updater can't end %s at this moment because it is waiting for a response of you.\n\nUpdater will force the application to close in %d seconds.\n\nIf you choose to end %s immediately, you will lose any unsaved data. To end the application now, press End Now."
+    IDS_CLOSEAPPLICATION_ENDNOW "End now"
+    IDS_CLOSEAPPLICATION_APPLICATION "application"
+    IDS_CONFIRMATION_CLOSEAPPLICATION_USER_EXPLANATION 
+                            "%s needs to be closed before installing the updates.\n\nPlease close %s and press the confirmation button.\n\nIf you select No, you will have to update %s at a later time."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Dutch (Netherlands) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NLD)
+#ifdef _WIN32
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONFIRMATION DIALOGEX 0, 0, 200, 121
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirmation"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "[YES]",btnYes,47,100,50,14
+    PUSHBUTTON      "[NO]",btnNo,103,100,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,180,53
+    CONTROL         "",lnSplitter,"Static",SS_BLACKFRAME,0,35,200,1
+    LTEXT           "[TITLE]",lblTitle,10,0,151,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CONTROL         155,bmpLogo,"Static",SS_BITMAP,0,0,200,36
+END
+
+IDD_ERROR DIALOGEX 0, 0, 200, 169
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Error"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "[OK]",btnOK,46,100,50,14
+    PUSHBUTTON      "[MORE]",btnMore,102,100,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,180,53
+    CONTROL         "",lnSplitter,"Static",SS_BLACKFRAME,0,35,200,1
+    LTEXT           "[TITLE]",lblTitle,10,0,151,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CONTROL         156,bmpLogo,"Static",SS_BITMAP,0,0,200,36
+    LTEXT           "[MORE]",lblMore,10,130,180,28
+    CONTROL         "",lnMoreSplitter,"Static",SS_GRAYFRAME,10,120,180,1
+END
+
+IDD_INFORMATION DIALOGEX 0, 0, 200, 121
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirmation"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "[OK]",btnOK,74,100,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,180,53
+    CONTROL         "",lnSplitter,"Static",SS_BLACKFRAME,0,35,200,1
+    LTEXT           "[TITLE]",lblTitle,10,0,151,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CONTROL         157,bmpLogo,"Static",SS_BITMAP,0,0,200,36
+END
+
+IDD_WARNING DIALOGEX 0, 0, 200, 121
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Warning"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "[OK]",btnOK,74,100,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,180,53
+    CONTROL         "",lnSplitter,"Static",SS_BLACKFRAME,0,35,200,1
+    LTEXT           "[TITLE]",lblTitle,10,0,151,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CONTROL         158,bmpLogo,"Static",SS_BITMAP,0,0,200,36
+END
+
+IDD_RESTORE DIALOG DISCARDABLE  0, 0, 239, 131
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Updater - Restore"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Restore",btnRestore,124,110,50,14
+    PUSHBUTTON      "Close",btnClose,182,110,50,14
+    LTEXT           "[EXPLANATION]",lblExplanation,7,7,225,60
+    LTEXT           "[PROGRESS]",lblProgress,7,73,225,11
+    CONTROL         "",prgRestore,"msctls_progress32",WS_BORDER,7,90,225,14
+END
+
+IDD_PROXYSETTINGS DIALOG DISCARDABLE  0, 0, 260, 158
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Updater proxy settings"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Direct connection to the internet",rdDirectConnection,
+                    "Button",BS_AUTORADIOBUTTON,7,7,246,15
+    CONTROL         "Auto-detect proxy settings (recommended)",rdAutoDetect,
+                    "Button",BS_AUTORADIOBUTTON,7,27,246,15
+    CONTROL         "Manual proxy configuration:",rdManual,"Button",
+                    BS_AUTORADIOBUTTON,7,47,246,15
+    EDITTEXT        txtHttpProxy,126,67,127,13,ES_AUTOHSCROLL
+    EDITTEXT        txtFtpProxy,126,82,127,13,ES_AUTOHSCROLL
+    CONTROL         "Automatic proxy configuration URL:",rdAutoConfigURL,
+                    "Button",BS_AUTORADIOBUTTON,7,100,246,15
+    EDITTEXT        txtAutoConfigURL,19,120,234,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",btnOK,148,137,50,14
+    PUSHBUTTON      "Cancel",btnCancel,203,137,50,14
+    LTEXT           "HTTP Proxy:",lblHttpProxy,19,69,100,11
+    LTEXT           "FTP Proxy:",lblFtpProxy,19,84,101,11
+END
+
+IDD_SELECTLANGUAGE DIALOG DISCARDABLE  0, 0, 209, 62
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Updater - Select language"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,41,50,14
+    CONTROL         "Remember my preference",chkRemember,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,50,44,101,9
+    COMBOBOX        cboLanguage,50,23,152,100,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select the language to use during the update:",
+                    IDC_STATIC,50,7,152,12
+    CONTROL         163,bmpImage,"Static",SS_BITMAP,7,7,32,30
+END
+
+IDD_CRASH DIALOG DISCARDABLE  0, 0, 228, 126
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Updater - unhandled exception"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,171,105,50,14
+    LTEXT           "Updater unhandled exception",lblTitle,7,7,214,17
+    LTEXT           "Updater just crashed. Please try to run Updater again and update the application again.\n\nHere is a detailed description of the crash:",
+                    lblDetails,7,26,214,35
+    EDITTEXT        txtCrashInfo,7,63,214,35,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "Send error report",chkSendErrorReport,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,107,137,10
+END
+
+IDD_LOGVIEWER DIALOG DISCARDABLE  0, 0, 372, 226
+STYLE DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Updater log viewer"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",btnOK,315,205,50,14
+    EDITTEXT        txtLog,7,7,358,191,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_CLOSEAPPLICATION DIALOGEX 0, 0, 200, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Close application"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "[EXPLANATION]",lblExplanation,10,42,180,39
+    CONTROL         "Progress1",prgEnd,"msctls_progress32",WS_BORDER,10,86,
+                    180,14
+    PUSHBUTTON      "Cancel",btnCancel,140,105,50,14
+    DEFPUSHBUTTON   "End now",btnEndNow,84,105,50,14
+    LTEXT           "[TITLE]",lblTitle,10,0,149,36,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    CONTROL         "",lnSplitter,"Static",SS_BLACKFRAME,0,35,200,1
+    CONTROL         171,IDC_STATIC,"Static",SS_BITMAP,0,0,200,36
+    CONTROL         "",icoApplication,"Static",SS_BLACKFRAME,170,10,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONFIRMATION, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 190
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_ERROR, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 190
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_INFORMATION, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 190
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_WARNING, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 190
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_RESTORE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+        HORZGUIDE, 67
+        HORZGUIDE, 73
+    END
+
+    IDD_PROXYSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        VERTGUIDE, 19
+        VERTGUIDE, 126
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+        HORZGUIDE, 22
+        HORZGUIDE, 27
+        HORZGUIDE, 42
+        HORZGUIDE, 47
+        HORZGUIDE, 62
+        HORZGUIDE, 67
+        HORZGUIDE, 95
+        HORZGUIDE, 100
+        HORZGUIDE, 115
+        HORZGUIDE, 120
+        HORZGUIDE, 132
+        HORZGUIDE, 137
+    END
+
+    IDD_SELECTLANGUAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        VERTGUIDE, 39
+        VERTGUIDE, 50
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_CRASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 221
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_LOGVIEWER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 365
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_CLOSEAPPLICATION, DIALOG
+    BEGIN
+        VERTGUIDE, 10
+        VERTGUIDE, 190
+        BOTTOMMARGIN, 119
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CONFIRMATION        BITMAP  DISCARDABLE     "res\\confirmation.bmp"
+IDB_ERROR               BITMAP  DISCARDABLE     "res\\error.bmp"
+IDB_INFORMATION         BITMAP  DISCARDABLE     "res\\information.bmp"
+IDB_WARNING             BITMAP  DISCARDABLE     "res\\warning.bmp"
+IDB_SELECTLANGUAGE      BITMAP  DISCARDABLE     "res\\language_select.bmp"
+IDB_AUTHENTICATION      BITMAP  DISCARDABLE     "res\\authentication.bmp"
+IDB_CLOSEAPPLICATION    BITMAP  DISCARDABLE     "res\\close_application.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_RESTORE             ICON    DISCARDABLE     "res\\Restore.ico"
+IDI_LOGVIEWER           ICON    DISCARDABLE     "res\\LogViewer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SELECTLANGUAGE DLGINIT
+BEGIN
+    cboLanguage, 0x403, 19, 0
+0x6e45, 0x6c67, 0x7369, 0x2068, 0x6f28, 0x6972, 0x6967, 0x616e, 0x296c, 
+"\000" 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Updater.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Dutch (Netherlands) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Updater.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

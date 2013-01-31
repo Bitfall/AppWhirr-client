@@ -1,0 +1,99 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Extractor - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP26.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../Shared" /I "../Zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/Extractor.pch" /YX"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\James\Development\self_extractor\Extractor\Extractor.cpp"
+"C:\James\Development\self_extractor\Extractor\ExtractorDlg.cpp"
+"C:\James\Development\self_extractor\Shared\SEFileInfo.cpp"
+"C:\James\Development\self_extractor\Shared\ShellFileOp.cpp"
+"C:\James\Development\self_extractor\Shared\TextProgressCtrl.cpp"
+"C:\James\Development\self_extractor\Zlib\adler32.c"
+"C:\James\Development\self_extractor\Zlib\compress.c"
+"C:\James\Development\self_extractor\Zlib\crc32.c"
+"C:\James\Development\self_extractor\Zlib\deflate.c"
+"C:\James\Development\self_extractor\Zlib\gzio.c"
+"C:\James\Development\self_extractor\Zlib\infblock.c"
+"C:\James\Development\self_extractor\Zlib\infcodes.c"
+"C:\James\Development\self_extractor\Zlib\inffast.c"
+"C:\James\Development\self_extractor\Zlib\inflate.c"
+"C:\James\Development\self_extractor\Zlib\inftrees.c"
+"C:\James\Development\self_extractor\Zlib\infutil.c"
+"C:\James\Development\self_extractor\Zlib\trees.c"
+"C:\James\Development\self_extractor\Zlib\uncompr.c"
+"C:\James\Development\self_extractor\Zlib\zutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP26.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP27.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../Shared" /I "../Zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/Extractor.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\James\Development\self_extractor\Shared\SelfExtractor.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP27.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP28.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Extractor.pdb" /debug /machine:I386 /out:"../Debug/Extractor.exe" /pdbtype:sept 
+.\Debug\DirDialog.obj
+.\Debug\Extractor.obj
+.\Debug\ExtractorDlg.obj
+.\Debug\SEFileInfo.obj
+.\Debug\SelfExtractor.obj
+.\Debug\ShellFileOp.obj
+.\Debug\StdAfx.obj
+.\Debug\TextProgressCtrl.obj
+.\Debug\adler32.obj
+.\Debug\compress.obj
+.\Debug\crc32.obj
+.\Debug\deflate.obj
+.\Debug\gzio.obj
+.\Debug\infblock.obj
+.\Debug\infcodes.obj
+.\Debug\inffast.obj
+.\Debug\inflate.obj
+.\Debug\inftrees.obj
+.\Debug\infutil.obj
+.\Debug\trees.obj
+.\Debug\uncompr.obj
+.\Debug\zutil.obj
+.\Debug\Extractor.res
+]
+Creating command line "link.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSP28.tmp"
+<h3>Output Window</h3>
+Compiling...
+Extractor.cpp
+ExtractorDlg.cpp
+SEFileInfo.cpp
+ShellFileOp.cpp
+TextProgressCtrl.cpp
+adler32.c
+compress.c
+crc32.c
+deflate.c
+gzio.c
+infblock.c
+infcodes.c
+inffast.c
+inflate.c
+inftrees.c
+infutil.c
+trees.c
+uncompr.c
+zutil.c
+Compiling...
+SelfExtractor.cpp
+c:\james\development\self_extractor\shared\selfextractor.cpp(18) : fatal error C1853: 'Debug/Extractor.pch' is not a precompiled header file created with this compiler
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+Extractor.exe - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

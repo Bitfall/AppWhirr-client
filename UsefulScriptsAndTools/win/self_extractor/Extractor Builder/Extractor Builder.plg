@@ -1,0 +1,210 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Extractor - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x809 /fo"Release/Extractor.res" /d "NDEBUG" /d "_AFXDLL" "C:\James\Development\self_extractor\Extractor\Extractor.rc"" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA0.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Shared\DirDialog.cpp"
+"C:\James\Development\self_extractor\Shared\SelfExtractor.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA0.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA1.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor.pch" /YX"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Extractor\Extractor.cpp"
+"C:\James\Development\self_extractor\Extractor\ExtractorDlg.cpp"
+"C:\James\Development\self_extractor\Shared\SEFileInfo.cpp"
+"C:\James\Development\self_extractor\Shared\ShellFileOp.cpp"
+"C:\James\Development\self_extractor\Shared\TextProgressCtrl.cpp"
+"C:\James\Development\self_extractor\Zlib\adler32.c"
+"C:\James\Development\self_extractor\Zlib\compress.c"
+"C:\James\Development\self_extractor\Zlib\crc32.c"
+"C:\James\Development\self_extractor\Zlib\deflate.c"
+"C:\James\Development\self_extractor\Zlib\gzio.c"
+"C:\James\Development\self_extractor\Zlib\infblock.c"
+"C:\James\Development\self_extractor\Zlib\infcodes.c"
+"C:\James\Development\self_extractor\Zlib\inffast.c"
+"C:\James\Development\self_extractor\Zlib\inflate.c"
+"C:\James\Development\self_extractor\Zlib\inftrees.c"
+"C:\James\Development\self_extractor\Zlib\infutil.c"
+"C:\James\Development\self_extractor\Zlib\trees.c"
+"C:\James\Development\self_extractor\Zlib\uncompr.c"
+"C:\James\Development\self_extractor\Zlib\zutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA1.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA2.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Extractor\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA2.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA3.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Extractor.pdb" /machine:I386 /out:"../Release/Extractor.exe" 
+.\Release\DirDialog.obj
+.\Release\Extractor.obj
+.\Release\ExtractorDlg.obj
+.\Release\SEFileInfo.obj
+.\Release\SelfExtractor.obj
+.\Release\ShellFileOp.obj
+.\Release\StdAfx.obj
+.\Release\TextProgressCtrl.obj
+.\Release\adler32.obj
+.\Release\compress.obj
+.\Release\crc32.obj
+.\Release\deflate.obj
+.\Release\gzio.obj
+.\Release\infblock.obj
+.\Release\infcodes.obj
+.\Release\inffast.obj
+.\Release\inflate.obj
+.\Release\inftrees.obj
+.\Release\infutil.obj
+.\Release\trees.obj
+.\Release\uncompr.obj
+.\Release\zutil.obj
+.\Release\Extractor.res
+]
+Creating command line "link.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA3.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DirDialog.cpp
+SelfExtractor.cpp
+Generating Code...
+Compiling...
+Extractor.cpp
+ExtractorDlg.cpp
+SEFileInfo.cpp
+ShellFileOp.cpp
+TextProgressCtrl.cpp
+adler32.c
+compress.c
+crc32.c
+deflate.c
+gzio.c
+infblock.c
+infcodes.c
+inffast.c
+inflate.c
+inftrees.c
+infutil.c
+trees.c
+uncompr.c
+zutil.c
+Linking...
+<h3>
+--------------------Configuration: Extractor Builder - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x809 /fo"Release/Extractor Builder.res" /d "NDEBUG" /d "_AFXDLL" "C:\James\Development\self_extractor\Extractor Builder\Extractor Builder.rc"" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA5.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor Builder.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Shared\DirDialog.cpp"
+"C:\James\Development\self_extractor\Shared\SEFileInfo.cpp"
+"C:\James\Development\self_extractor\Shared\SelfExtractor.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA5.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA6.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor Builder.pch" /YX"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Extractor Builder\Extractor Builder.cpp"
+"C:\James\Development\self_extractor\Extractor Builder\Extractor BuilderDlg.cpp"
+"C:\James\Development\self_extractor\Shared\ShellFileOp.cpp"
+"C:\James\Development\self_extractor\Shared\TextProgressCtrl.cpp"
+"C:\James\Development\self_extractor\Zlib\adler32.c"
+"C:\James\Development\self_extractor\Zlib\compress.c"
+"C:\James\Development\self_extractor\Zlib\crc32.c"
+"C:\James\Development\self_extractor\Zlib\deflate.c"
+"C:\James\Development\self_extractor\Zlib\gzio.c"
+"C:\James\Development\self_extractor\Zlib\infblock.c"
+"C:\James\Development\self_extractor\Zlib\infcodes.c"
+"C:\James\Development\self_extractor\Zlib\inffast.c"
+"C:\James\Development\self_extractor\Zlib\inflate.c"
+"C:\James\Development\self_extractor\Zlib\inftrees.c"
+"C:\James\Development\self_extractor\Zlib\infutil.c"
+"C:\James\Development\self_extractor\Zlib\trees.c"
+"C:\James\Development\self_extractor\Zlib\uncompr.c"
+"C:\James\Development\self_extractor\Zlib\zutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA6.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA7.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "../Shared" /I "../Zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Release/Extractor Builder.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\James\Development\self_extractor\Extractor Builder\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA7.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA8.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Extractor Builder.pdb" /machine:I386 /out:"../Release/Extractor Builder.exe" 
+".\Release\DirDialog.obj"
+".\Release\Extractor Builder.obj"
+".\Release\Extractor BuilderDlg.obj"
+".\Release\SEFileInfo.obj"
+".\Release\SelfExtractor.obj"
+".\Release\ShellFileOp.obj"
+".\Release\StdAfx.obj"
+".\Release\TextProgressCtrl.obj"
+".\Release\adler32.obj"
+".\Release\compress.obj"
+".\Release\crc32.obj"
+".\Release\deflate.obj"
+".\Release\gzio.obj"
+".\Release\infblock.obj"
+".\Release\infcodes.obj"
+".\Release\inffast.obj"
+".\Release\inflate.obj"
+".\Release\inftrees.obj"
+".\Release\infutil.obj"
+".\Release\trees.obj"
+".\Release\uncompr.obj"
+".\Release\zutil.obj"
+".\Release\Extractor Builder.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\JAMES~1.SPI\LOCALS~1\Temp\RSPA8.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DirDialog.cpp
+SEFileInfo.cpp
+SelfExtractor.cpp
+Generating Code...
+Compiling...
+Extractor Builder.cpp
+Extractor BuilderDlg.cpp
+ShellFileOp.cpp
+TextProgressCtrl.cpp
+adler32.c
+compress.c
+crc32.c
+deflate.c
+gzio.c
+infblock.c
+infcodes.c
+inffast.c
+inflate.c
+inftrees.c
+infutil.c
+trees.c
+uncompr.c
+zutil.c
+Linking...
+
+
+
+<h3>Results</h3>
+Extractor Builder.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
