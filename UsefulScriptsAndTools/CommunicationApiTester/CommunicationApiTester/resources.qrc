@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="root_cert">resources/root.crt</file>
+        <file alias="aw_cert">resources/www_appwhirr_com.cert</file>
+        <file alias="aw_cert2">resources/appwhirr.csr</file>
+        <file alias="aw_cert3">resources/test.cer</file>
+        <file alias="aw_cert_der_2">resources/test2.der.cer</file>
+        <file alias="aw_cert_der_3">resources/test3.der.cer</file>
+        <file alias="aw_cert4_der">resources/www_appwhirr_com.der</file>
+    </qresource>
+</RCC>
