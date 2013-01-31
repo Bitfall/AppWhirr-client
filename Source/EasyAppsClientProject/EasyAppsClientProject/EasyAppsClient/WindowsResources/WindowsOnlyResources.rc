@@ -1,0 +1,54 @@
+IDI_ICON1               ICON    DISCARDABLE     "appwhirr.ico"
+
+#include <windows.h>
+
+
+#ifndef CLIENT_RES_VERSION_H
+#define CLIENT_RES_VERSION_H
+
+#define CLIENT_RES_VER_FILEVERSION             1,0,0,0
+#define CLIENT_RES_VER_FILEVERSION_STR         "1.0.0.0\0"
+
+#define CLIENT_RES_VER_PRODUCTVERSION          1,0,0,0
+#define CLIENT_RES_VER_PRODUCTVERSION_STR      "1.0\0"
+
+#define CLIENT_RES_VER_COMPANYNAME_STR         "AppWhirr Team"
+#define CLIENT_RES_VER_FILEDESCRIPTION_STR     "AppWhirr Client app"
+#define CLIENT_RES_VER_INTERNALNAME_STR        "AppWhirr Client app"
+#define CLIENT_RES_VER_LEGALCOPYRIGHT_STR      "Copyright 2011-2012 AppWhirr Team"
+#define CLIENT_RES_VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
+#define CLIENT_RES_VER_LEGALTRADEMARKS2_STR    CLIENT_RES_VER_LEGALTRADEMARKS1_STR
+#define CLIENT_RES_VER_ORIGINALFILENAME_STR    "AppWhirr.exe"
+#define CLIENT_RES_VER_PRODUCTNAME_STR         "AppWhirr"
+
+#define CLIENT_RES_VER_COMPANYDOMAIN_STR       "appwhirr.com"
+
+#endif // CLIENT_RES_VERSION_H
+
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     CLIENT_RES_VER_FILEVERSION
+PRODUCTVERSION  CLIENT_RES_VER_PRODUCTVERSION
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",        CLIENT_RES_VER_COMPANYNAME_STR
+            VALUE "FileDescription",    CLIENT_RES_VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",        CLIENT_RES_VER_FILEVERSION_STR
+            VALUE "InternalName",       CLIENT_RES_VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",     CLIENT_RES_VER_LEGALCOPYRIGHT_STR
+            VALUE "LegalTrademarks1",   CLIENT_RES_VER_LEGALTRADEMARKS1_STR
+            VALUE "LegalTrademarks2",   CLIENT_RES_VER_LEGALTRADEMARKS2_STR
+            VALUE "OriginalFilename",   CLIENT_RES_VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",        CLIENT_RES_VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",     CLIENT_RES_VER_PRODUCTVERSION_STR
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

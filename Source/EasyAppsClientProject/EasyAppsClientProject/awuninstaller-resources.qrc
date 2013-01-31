@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="AWGuiConfig">EasyAppsClient/Resources/guiconfig.uiconf</file>
+    </qresource>
+    <qresource prefix="/images/checkbox">
+        <file alias="Checkbox-Checked-Normal">EasyAppsClient/Resources/images/checkbox/checkbox-checked.png</file>
+        <file alias="Checkbox-Unchecked-Normal">EasyAppsClient/Resources/images/checkbox/checkbox-default.png</file>
+    </qresource>
+</RCC>

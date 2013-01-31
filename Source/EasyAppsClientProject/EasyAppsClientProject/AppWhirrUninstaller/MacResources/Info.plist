@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+        <string>AppWhirrUninstaller</string>
+	<key>CFBundleGetInfoString</key>
+        <string>AppWhirr Uninstaller</string>
+	<key>CFBundleIconFile</key>
+	<string>ApplicationLauncher.icns</string>
+	<key>CFBundleIdentifier</key>
+        <string>com.uninstaller.appwhirr.bitfall</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+                        <string>com.browser.appwhirruninstaller</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+                                <string>appwhirruninstaller</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

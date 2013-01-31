@@ -1,0 +1,1092 @@
+//
+// # Notes
+//
+// ## Parsing / processing
+//	* every line will be simplified before use, so tabs and other 'whitespace' characters will be removed (about simplified() Qt method: http://doc.qt.nokia.com/latest/qstring.html#simplified)
+//	** and every content part will be trimmed (content part means: when processing any line the content will be (mostly) trimmed -> e.g. placeholder definition's content part will be trimmed
+//	* the file is processed up-to-down/top-to-bottom, line-by-line, so you cannot use variable before it's defined
+//	** also cannot use copy of source you before it's defined
+//	** only lines are interpreted, multi-line commands are not allowed
+//
+// ## Format / syntax
+//
+// ### Comment
+//	* the lines starting with // (2 /) are comment lines
+//	** no inline comment allowed / implemented -> don't do something like: "1000x618 // the right size" -> the text "the right size" won't be interpreted as comment but as a part of the content
+//
+// ### ID
+//	* the lines starting with @| and ending with | are the ID lines -> the following lines will be interpreted as the content related to the ID
+//	** the ID is the content between the "@|" and "|" marks - e.g.: @|sometext| -> the ID is: sometext
+// 	** the ID cannot contain the "|" character!
+//	* note: if the ID contains 1 or more %n (where n is a decimal number) it indicated it has a Qt specific argument placeholder
+//	** this is not used by the Gui Configuration Manager, it's processed as a simple text, but by the object requested for the config will use it
+//	*** example: @|Widget/Default/Background/style/ObjectName(%1)|
+//	*** this indicates that the object requested for this config-id have to do a 'Qt-string-argument-insertion' inserting the ObjectName
+//	*** note: to be exact - it indicates that the placeholder '%1' have to be replaced by the ObjectName, but this is just how the 'Qt-string-argument-insertion' works
+//
+// ### Placeholders
+//	* lines starts with "@something =" are interpreted as placeholder definitions and can be used later and will be replaced with the content of the right side of the '='
+//	** example: "background-color: @defaultLightGray;" - if @defaultLightGray defined before this line it will be replaced with it's 'value'
+//	** placeholders will be applied only on content lines
+//
+// ### Copy / include
+//	* lines starts with ".@|" are interpreted as 'copy the given ID's content here. The ID have to be post-fixed with the '|' character of course.
+//	** example: .@|Hello/style| -> the content of 'Hello/style' will replace this line (if defined)
+//
+// ### Other, content syntaxes
+//	* SIZE syntax: width x height
+//	* COLOR syntax: define it with hexa -> #efefef
+//	* MARGINS syntax: left;top;right;bottom
+//	** an ending 4th ';' can be used after the bottom but it's not required
+//
+// # References, Useful links
+//	* Qt Style-sheet reference: http://doc.qt.nokia.com/4.7-snapshot/stylesheet-reference.html#padding-prop
+//	** Pseudo states: http://doc.qt.nokia.com/4.7-snapshot/stylesheet-reference.html#list-of-pseudo-states
+//	** SubControls: http://doc.qt.nokia.com/4.7-snapshot/stylesheet-reference.html#subcontrols
+//	* Qt Style-sheet examples: http://doc.qt.nokia.com/4.7-snapshot/stylesheet-examples.html
+//
+//
+// Have fun
+//
+
+// ---------------------
+// --- color palette ---
+
+// greens
+
+@defaultDarkGreenColorHex = #6bb130
+@defaultDarkGreenHighlightedColorHex = #519400
+@defaultDarkGreenBorderColorHex = #4a8600
+@defaultDarkGreenHighlightedBorderColorHex = #519400
+@defaultDarkGreenGradientStartColorHex = #4f8c00
+
+@defaultLightGreenColorHex = #71c52b
+@defaultLightGreenHighlightedColorhex = #68b227
+
+// grays
+
+@defaultLightGrayColorHex = #bebebe
+@defaultLightGrayHighlightedColorHex = #a3a3a3
+@defaultLightGrayBackgroundColorHex = #f0f0f0
+@defaultLightGrayHighlightedBackgroundColorHex = #e6e6e6
+@defaultLightGrayDisabledBackgroundColorHex = #e0e0e0
+@defaultLightGrayGradientStartColorHex = #cecece
+
+@defaultDarkGrayColorHex = #666666
+@defaultDarkGrayHighlightedColorHex = #333333
+@defaultDarkGrayBackgroundHex = #4c4c4c
+
+// reds
+@lightRedBackgroundColorHex = #ff999a
+@darkRedBackgroundColorHex = #c61c0a
+@darkRedHighlightedBackgroundColorHex = #b2180a
+
+//
+// text
+@defaultDarkGrayTextColorHex = #666666
+@defaultDarkGrayHighlightedTextColorHex = #333333
+
+@defaultMediumGrayTextColorHex = #898989
+
+@defaultLightGrayTextColorHex = #f0f0f0
+@defaultLightGrayHighlightedTextColorHex = #ffffff
+@defaultLightGrayDisabledTextColorHex = #e6e6e6
+
+// -----------------------
+// --- template blocks ---
+
+// # border
+
+@|_Block/Border/NoBorder/style|
+border-style: none;
+border-width: 0px;
+
+@|_Block/Default/Border/style|
+border-style: solid;
+border-width: 1px;
+border-radius: 3px;
+
+// light gray
+@|_Block/Default/LightGray/Border/style|
+.@|_Block/Default/Border/style|
+border-color: @defaultLightGrayColorHex;
+
+@|_Block/Default/LightGray/BorderWithPadding/style|
+.@|_Block/Default/LightGray/Border/style|
+padding: 5px;
+
+@|_Block/Default/LightGray/Border/Hover/style|
+border-color: @defaultLightGrayHighlightedColorHex;
+
+// dark gray
+@|_Block/Default/DarkGray/Border/style|
+.@|_Block/Default/Border/style|
+border-color: @defaultDarkGrayColorHex;
+
+@|_Block/Default/DarkGray/BorderWithPadding/style|
+.@|_Block/Default/Border/style|
+border-color: @defaultDarkGrayColorHex;
+padding: 5px;
+
+@|_Block/Default/DarkGray/Border/Hover/style|
+border-color: @defaultDarkGrayHighlightedColorHex;
+
+// dark green
+@|_Block/Default/DarkGreen/BorderWithPadding/style|
+.@|_Block/Default/Border/style|
+border-color: @defaultDarkGreenBorderColorHex;
+padding: 5px;
+
+@|_Block/Default/DarkGreen/Border/Hover/style|
+border-color: @defaultDarkGrayHighlightedColorHex;
+
+// # margin
+@|_Block/Default/Margin/default|
+margin-top: 2px;
+margin-bottom: 2px;
+margin-left: 2px;
+margin-right: 2px;
+
+@|_Block/Default/Margin/noMargins|
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+
+
+// # font
+
+@|_Block/Default/Normal/font|
+font: 14px arial, sans-serif;
+
+@|_Block/Default/Large/font|
+font: 18px arial, sans-serif;
+
+@|_Block/Default/ExtraLarge/font|
+font: 24px arial, sans-serif;
+
+@|_Block/Default/Small/font|
+font: 12px arial, sans-serif;
+
+@|_Block/Default/ExtraSmall/font|
+font: 11px arial, sans-serif;
+
+
+// # item size
+
+// Don't use this! This sets only the content size, and it makes really hard to generalize
+@|_Block/Default/SingleLineWidgetWithBorderAndPadding/fixContentHeight|
+// 30px total -> 2*5px padding, 2*1px border = 18px content height
+min-height: 18px;
+max-height: 18px;
+
+// Use this instead and apply it to the widgets "manually"
+@|Size/Default/SingleLineWidget/fixHeight|
+30
+
+// --------------------------
+// --- styles and configs ---
+
+// some color outlets
+//	(note: maybe this could be handled differently, but currently this is the way to go. Used by custom painting mainly)
+
+@|ColorHex/Default/LightGray/WidgetBackground|
+@defaultLightGrayBackgroundColorHex
+
+@|ColorHex/Default/DarkGray/Default|
+@defaultDarkGrayColorHex
+
+@|ColorHex/Default/DarkGray/Highlighted|
+@defaultDarkGrayHighlightedColorHex
+
+@|ColorHex/Default/LightGray/Highlighted|
+@defaultLightGrayHighlightedBackgroundColorHex
+
+
+//
+@|Widget/Default/Background/style/ObjectName(%1)|
+QWidget#%1 { background-color: @defaultLightGrayBackgroundColorHex; }
+
+@|WidgetClassName(%1)/Default/Background/style|
+%1 { background-color: @defaultLightGrayBackgroundColorHex; }
+
+@|Widget/Default/Background/style|
+QWidget { background-color: @defaultLightGrayBackgroundColorHex; }
+
+@|PageWidget/Default/contentMargins|
+10;10;10;10;
+
+// ----------------------
+// # MainWindow
+@|MainWindow/defaultSize|
+1010x618
+
+@|MainWindow/minimumSize|
+800x400
+
+
+// ----------------
+// # Window header/navbar
+
+
+@|MainWindow/Header/style|
+NavigationWidget#NavigationWidgetContentContainer {
+	border-top-left-radius: 6px; 
+	border-top-right-radius: 6px; 
+	background-color: @defaultDarkGreenColorHex; 
+}
+
+//QWidget#NavigationWidgetContentContainer:hover { 
+//	background-color: @defaultDarkGreenHighlightedColorHex; 
+//}
+
+// buttons
+@|MainWindow/Header/Buttons/Minimize/style|
+QPushButton {
+	border-width: 1px;
+	background-image: url(:/headerbar/MinimizeButton-Normal);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	border-width: 1px;
+	background-image: url(:/headerbar/MinimizeButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+QPushButton:pressed {
+	border-width: 1px;
+	background-image: url(:/headerbar/MinimizeButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@|MainWindow/Header/Buttons/Maximize/style|
+QPushButton {
+	border-width: 1px;
+	background-image: url(:/headerbar/MaximizeButton-Normal);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	border-width: 1px;
+	background-image: url(:/headerbar/MaximizeButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+QPushButton:pressed {
+	border-width: 1px;
+	background-image: url(:/headerbar/MaximizeButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@|MainWindow/Header/Buttons/Close/style|
+QPushButton {
+	border-width: 1px;
+	background-image: url(:/headerbar/CloseButton-Normal);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	border-width: 1px;
+	background-image: url(:/headerbar/CloseButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+QPushButton:pressed {
+	border-width: 1px;
+	background-image: url(:/headerbar/CloseButton-Hover);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+// ----------------
+// # Main menu 
+
+@|MainMenuHolderSidebar/expandedFixedWidth|
+180
+
+@|MainMenu/fixedWidth|
+175
+
+@|MainMenu/TextLabel/Inactive/style|
+QLabel {
+    font: 14px arial, sans-serif;
+    color: @defaultDarkGrayTextColorHex;
+    margin: 15,12,0,12;
+}
+
+@|MainMenu/TextLabel/Active/style|
+QLabel {
+    font: 14px arial, sans-serif;
+    color: @defaultDarkGrayHighlightedTextColorHex;
+    margin: 15,12,0,12;
+}
+
+// -------------
+// # ScrollBar 
+
+@|ScrollBar/Default/GrayGreen/style|
+ 
+// vertical
+QScrollBar:vertical { 
+	background: @defaultLightGrayBackgroundColorHex; 
+	width: 15px; 
+//	padding: 5px 0px 5px 0px;
+	margin: 5px 2px 5px 2px;
+}
+QScrollBar:handle:vertical { 
+	background: @defaultLightGrayHighlightedColorHex; 
+	border-radius: 5px;
+//	margin: 5px 0px 5px 0px;
+}
+// horizontal
+QScrollBar:horizontal { 
+	background: @defaultLightGrayBackgroundColorHex; 
+	height: 15px;
+//	padding: 0px 5px 0px 5px;
+	margin: 2px 5px 2px 5px;
+}
+QScrollBar:handle:horizontal { 
+	background: @defaultLightGrayHighlightedColorHex; 
+	border-radius: 5px;
+//	margin: 0px 5px 0px 5px;
+}
+// hover
+QScrollBar:handle:vertical:hover, QScrollBar:handle:horizontal:hover { 
+	background: @defaultDarkGreenColorHex; 
+}
+// add/sub line
+QScrollBar:add-line:vertical {
+	background: @defaultLightGrayBackgroundColorHex;
+	height: 5px;
+	subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar:add-line:horizontal {
+	background: @defaultLightGrayBackgroundColorHex;
+	width: 5px;
+	subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar:sub-line:vertical {
+	background: @defaultLightGrayBackgroundColorHex;
+	height: 5px;
+	subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar:sub-line:horizontal {
+	background: @defaultLightGrayBackgroundColorHex;
+	width: 5px;
+	subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+	background: @defaultLightGrayBackgroundColorHex;
+}
+
+// -----------------
+// # Scroll Area 
+
+@|ScrollArea/Dynamic/Default/Transparent/style|
+QWidget {
+	background-color: transparent;
+}
+.@|ScrollBar/Default/GrayGreen/style|
+
+// --------------
+// # Snapshot change animation
+@|SnapshotChange/Default/ShowHideAnimation/duration|
+400
+
+@|SnapshotChange/Default/MoveAnimation/duration|
+300
+
+// --------------
+// # Labels
+
+// dark gray
+@|Label/Default/DarkDarkGray/style|
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: @defaultDarkGrayHighlightedTextColorHex;
+    padding: 0px;
+}
+
+@|Label/DarkDarkGray/Small/style|
+.@|Label/Default/DarkDarkGray/style|
+QLabel {
+	.@|_Block/Default/Small/font|
+}
+
+@|Label/Default/DarkGray/style|
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: @defaultDarkGrayHighlightedTextColorHex;
+    padding: 0px;
+}
+
+@|Label/Large/DarkGray/style|
+QLabel {
+    .@|_Block/Default/Large/font|
+    color: @defaultDarkGrayHighlightedTextColorHex;
+    padding: 0px;
+}
+
+// medium gray
+@|Label/Default/MediumGray/style|
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: @defaultMediumGrayTextColorHex;
+    padding: 0px;
+}
+
+@|Label/Large/MediumGray/style|
+QLabel {
+    .@|_Block/Default/Large/font|
+    color: @defaultMediumGrayTextColorHex;
+    padding: 0px;
+}
+
+// light gray
+@|Label/Default/LightGray/style|
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: @defaultLightGrayHighlightedTextColorHex;
+    padding: 0px;
+}
+
+@|Label/Large/LightGray/style|
+QLabel {
+    .@|_Block/Default/Large/font|
+    color: @defaultLightGrayHighlightedTextColorHex;
+    padding: 0px;
+}
+
+// green
+@|Label/Large/DarkGreen/style|
+QLabel {
+    .@|_Block/Default/Large/font|
+    color: @defaultDarkGreenColorHex;
+    padding: 0px;
+}
+
+@|Label/ExtraLarge/DarkGreen/style|
+QLabel {
+    .@|_Block/Default/ExtraLarge/font|
+    color: @defaultDarkGreenColorHex;
+    padding: 0px;
+}
+
+@|Label/SideBar/LightGray/style|
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: #575757;
+    padding: 0px;
+}
+
+// ---------------------
+// # Notification Area
+
+@|Notification/Area/style|
+QWidget[cssId="notif-area"] {
+	background-color: @defaultDarkGrayBackgroundHex;
+}
+
+@|Notification/Area/contentMargins|
+1;1;1;0;
+
+@|Notification/Widget/fixedHeight|
+30
+
+@|Notification/Area/maxHeight|
+// 3x widget size - max 3 notifications are present at a given time
+90
+
+@|Notification/Area/spacingBetweenItems|
+5
+
+@|Notification/SnapshotChange/ShowHideAnimation/duration|
+300
+
+@|Notification/SnapshotChange/MoveAnimation/duration|
+200
+
+@|Notification/SnapshotChange/AreaSizeChangeAnimation/duration|
+700
+
+//
+// ## notification widgets
+
+// default
+@|Notification/Widget/Default/style|
+QWidget { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+// ### simple text
+
+// low priority
+@|Notification/Widget/SimpleText/LowPriority/style|
+QWidget { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+
+// normal priority
+@|Notification/Widget/SimpleText/NormalPriority/style|
+QWidget { 
+    background-color: @defaultLightGreenColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+
+// high priority
+@|Notification/Widget/SimpleText/HighPriority/style|
+QWidget { 
+    background-color: @defaultDarkGreenColorHex;
+}
+.@|Label/Default/LightGray/style|
+
+// critical priority
+@|Notification/Widget/SimpleText/CriticalPriority/style|
+QWidget { 
+    background-color: @lightRedBackgroundColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+
+// ### install progress
+
+// low priority
+@|Notification/Widget/InstallProgress/LowPriority/style|
+QWidget { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+
+// normal priority
+@|Notification/Widget/InstallProgress/NormalPriority/style|
+QWidget { 
+    background-color: @defaultLightGreenColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+
+// high priority
+@|Notification/Widget/InstallProgress/HighPriority/style|
+QWidget { 
+    background-color: @defaultDarkGreenColorHex;
+}
+.@|Label/Default/LightGray/style|
+
+// critical priority
+@|Notification/Widget/InstallProgress/CriticalPriority/style|
+QWidget { 
+    background-color: @lightRedBackgroundColorHex;
+}
+.@|Label/Default/DarkGray/style|
+
+// ### client self update available
+@|Notification/Widget/ClientSelfUpdateAvailable/style|
+QWidget { 
+//    background-color: @defaultDarkGreenColorHex;
+	background-image:url(":/ClientSelfUpdateAvailableNotificationWidget-Background");
+	background-repeat:repeat-x;
+}
+.@|Label/Default/LightGray/style|
+
+//
+// # Checkbox Button
+@|CheckboxButton/Default/Gray/style|
+CheckboxButton {
+	.@|_Block/Default/LightGray/BorderWithPadding/style|
+	background-color: @defaultLightGrayBackgroundColorHex;
+	color: @defaultDarkGrayTextColorHex;
+        padding: 3px;
+}
+
+CheckboxButton:hover {
+	.@|_Block/Default/LightGray/Border/Hover/style|
+	color: @defaultDarkGrayHighlightedTextColorHex;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 @defaultLightGrayGradientStartColorHex, stop:0.1 @defaultLightGrayBackgroundColorHex, stop:0.9 @defaultLightGrayBackgroundColorHex, stop:1 @defaultLightGrayGradientStartColorHex);
+}
+
+CheckboxButton:!enabled {
+	background-color: @defaultLightGrayDisabledBackgroundColorHex;
+}
+
+QLabel {
+    .@|_Block/Default/Normal/font|
+    color: @defaultDarkGrayHighlightedTextColorHex;
+	
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/images/checkbox/Checkbox-Unchecked-Normal);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/images/checkbox/Checkbox-Checked-Normal);
+}
+
+
+@|CheckboxButton/Default/NoBackgroundLightGray/style|
+CheckboxButton {
+	.@|_Block/Border/NoBorder/style|
+	.@|_Block/Default/Margin/noMargins|
+	padding: 0px;
+	background: transparent;
+	color: @defaultLightGrayTextColorHex;
+}
+
+CheckboxButton:hover {
+	color: @defaultLightGrayHighlightedTextColorHex;
+}
+
+CheckboxButton:!enabled {
+	color: @defaultLightGrayDisabledTextColorHex;
+}
+
+QLabel {
+    .@|_Block/Default/Normal/font|
+	.@|_Block/Default/Margin/noMargins|
+	padding: 0px;
+    color: @defaultLightGrayTextColorHex;
+}
+
+QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/images/checkbox/Checkbox-Unchecked-Normal);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/images/checkbox/Checkbox-Checked-Normal);
+}
+
+
+
+//
+// # ProgressBar
+
+@|ProgressBar/Default/Green/style|
+QProgressBar {
+	.@|_Block/Default/DarkGray/Border/style|
+    background-color: @defaultLightGreenHighlightedColorhex;
+    text-align: center;
+    font:20px arial, sans-serif;
+	color: @defaultLightGrayHighlightedTextColorHex;
+}
+
+QProgressBar::chunk {
+	background-color: @defaultDarkGreenHighlightedColorHex;
+	width: 5px;
+}
+
+//
+// # LineEdit
+
+@|LineEdit/Default/Gray/style|
+QLineEdit {
+	.@|_Block/Default/DarkGray/BorderWithPadding/style|
+
+	.@|_Block/Default/Small/font|
+	color: @defaultDarkGrayTextColorHex;
+	selection-color: @defaultLightGrayTextColorHex;
+	background-color: @defaultLightGrayBackgroundColorHex;
+	selection-background-color: @defaultDarkGrayBackgroundHex;
+}
+
+QLineEdit:hover {
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+QLineEdit:!enabled {
+	background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+}
+
+// 
+@|LineEdit/Search/Gray/style|
+QLineEdit {
+	.@|_Block/Default/DarkGray/BorderWithPadding/style|
+
+	.@|_Block/Default/Small/font|
+	color: @defaultDarkGrayTextColorHex;
+	selection-color: @defaultLightGrayTextColorHex;
+	background-color: @defaultLightGrayBackgroundColorHex;
+	selection-background-color: @defaultDarkGrayBackgroundHex;
+
+        border-color:@defaultDarkGrayTextColorHex;
+
+        background-image: url(':/search-icon');
+        background-repeat: no-repeat;
+        background-position: left center;
+	
+	margin-top: 2px;
+	margin-bottom: 4px;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        padding-left: 20px;
+}
+
+QLineEdit:hover {
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+
+//
+// # Button
+
+// normal priority (green)
+@|Button/Default/NormalPriority/style|
+QPushButton {
+	.@|_Block/Default/DarkGreen/BorderWithPadding/style|
+	.@|_Block/Default/Normal/font|
+	
+	background-color: @defaultDarkGreenColorHex;
+	border-image: none;
+	background-image: none;
+	color: @defaultLightGrayTextColorHex;
+}
+
+QPushButton:hover {
+	.@|_Block/Default/DarkGreen/Border/Hover/style|
+	color: @defaultLightGrayHighlightedTextColorHex;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 @defaultDarkGreenGradientStartColorHex, stop:0.1 @defaultDarkGreenColorHex, stop:0.9 @defaultDarkGreenColorHex, stop:1 @defaultDarkGreenGradientStartColorHex);
+}
+
+QPushButton:!enabled {
+	background-color: @defaultDarkGreenHighlightedColorHex;
+}
+
+// show more
+@|Button/Default/ShowMore/style|
+QPushButton {
+        .@|_Block/Default/DarkGreen/BorderWithPadding/style|
+        .@|_Block/Default/Small/font|
+
+        padding: 5px;
+        margin: 5px 0 0 0;
+        background-color: #d4d5d5;
+        border-color: #d4d5d5;
+        border-image: none;
+        background-image: none;
+        color: @defaultLightGrayHighlightedTextColorHex;
+}
+
+QPushButton:hover {
+	background-color: @defaultLightGrayGradientStartColorHex;
+    border-color: @defaultLightGrayHighlightedColorHex;
+}
+
+// high priority (green)
+@|Button/Default/HighPriority/style|
+.@|Button/Default/NormalPriority/style|
+
+
+// low priority (gray)
+@|Button/Default/LowPriority/style|
+QPushButton {
+	.@|_Block/Default/LightGray/BorderWithPadding/style|
+	.@|_Block/Default/Normal/font|
+	
+	background-color: @defaultLightGrayBackgroundColorHex;
+	color: @defaultDarkGrayTextColorHex;
+}
+
+QPushButton:hover {
+	.@|_Block/Default/LightGray/Border/Hover/style|
+	color: @defaultDarkGrayHighlightedTextColorHex;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 @defaultLightGrayGradientStartColorHex, stop:0.1 @defaultLightGrayBackgroundColorHex, stop:0.9 @defaultLightGrayBackgroundColorHex, stop:1 @defaultLightGrayGradientStartColorHex);
+}
+
+QPushButton:!enabled {
+	background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+}
+
+// low priority (gray) with small text
+@|Button/LowPriority/SmallText/style|
+.@|Button/Default/LowPriority/style|
+QPushButton {
+	.@|_Block/Default/ExtraSmall/font|
+}
+
+// dangerous action button
+@|Button/DangerousAction/style|
+QPushButton {
+	.@|_Block/Default/LightGray/BorderWithPadding/style|
+	.@|_Block/Default/Normal/font|
+	
+	background-color: @darkRedBackgroundColorHex;
+	color: @defaultLightGrayTextColorHex;
+}
+
+QPushButton:hover {
+	.@|_Block/Default/LightGray/Border/Hover/style|
+	color: @defaultLightGrayHighlightedTextColorHex;
+//	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 @defaultDarkGreenGradientStartColorHex, stop:0.1 @darkRedHighlightedBackgroundColorHex, stop:0.9 @darkRedHighlightedBackgroundColorHex, stop:1 @defaultDarkGreenGradientStartColorHex);
+	background-color: @darkRedHighlightedBackgroundColorHex;
+}
+
+QPushButton:!enabled {
+	background-color: @darkRedHighlightedBackgroundColorHex;
+	color: @defaultLightGrayDisabledTextColorHex;
+}
+
+// ## Start page - Register account button
+
+@|Button/StartupPage/RegisterAccount/style|
+QPushButton {
+	.@|_Block/Default/DarkGreen/BorderWithPadding/style|
+	.@|_Block/Default/Large/font|
+	
+	background-color: @defaultDarkGreenColorHex;
+	border-image: none;
+	background-image: none;
+	color: @defaultLightGrayTextColorHex;
+}
+
+QPushButton:hover {
+	.@|_Block/Default/DarkGreen/Border/Hover/style|
+	color: @defaultLightGrayHighlightedTextColorHex;
+	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 @defaultDarkGreenGradientStartColorHex, stop:0.1 @defaultDarkGreenColorHex, stop:0.9 @defaultDarkGreenColorHex, stop:1 @defaultDarkGreenGradientStartColorHex);
+}
+
+QPushButton:!enabled {
+	background-color: @defaultDarkGreenHighlightedColorHex;
+}
+
+// ## Run App button
+
+@|Button/RunApp/style|
+.@|Button/Default/NormalPriority/style|
+
+@|Button/RunApp/SecondOption/style|
+.@|Button/Default/LowPriority/style|
+
+@|Button/RunApp/minimumWidth|
+50
+
+@|Button/RunApp/fixedHeight|
+30
+
+// ## Manage app button
+
+@|Button/ManageApp/style|
+.@|Button/Default/LowPriority/style|
+
+@|Button/ManageApp/minimumWidth|
+50
+
+@|Button/ManageApp/fixedHeight|
+30
+
+//
+// # TextEdit
+
+@|TextEdit/Default/LightGray/style|
+.@|ScrollBar/Default/GrayGreen/style|
+QTextEdit {
+	.@|_Block/Default/DarkGray/BorderWithPadding/style|
+	.@|_Block/Default/Small/font|
+	
+	color: @defaultDarkGrayTextColorHex;
+	selection-color: @defaultLightGrayTextColorHex;
+	background-color: @defaultLightGrayBackgroundColorHex;
+	selection-background-color: @defaultDarkGrayBackgroundHex;
+}
+
+QTextEdit:hover {
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+@|TextEdit/NoBorder/LightGray/style|
+.@|ScrollBar/Default/GrayGreen/style|
+QTextEdit {
+	.@|_Block/Border/NoBorder/style|
+	.@|_Block/Default/Small/font|
+	
+	color: @defaultDarkGrayTextColorHex;
+	selection-color: @defaultLightGrayTextColorHex;
+	background-color: @defaultLightGrayBackgroundColorHex;
+	selection-background-color: @defaultDarkGrayBackgroundHex;
+}
+
+QTextEdit:hover {
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+//
+// # Store - main page
+
+@|Store/MainPageWidget/Highlight/animationDuration|
+250
+
+@|Store/SectionWidget/Default/style|
+QWidget { 
+//	background: transparent;
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+	.@|_Block/Default/LightGray/Border/style|
+}
+//QWidget:hover {
+//	background-color: @defaultLightGrayHighlightedColorHex;
+//	.@|_Block/Default/DarkGray/Border/Hover/style|
+//}
+
+@|Store/SectionWidget/HotSection/style|
+QWidget { 
+    background-color: @defaultLightGrayColorHex;
+	.@|_Block/Default/LightGray/Border/style|
+	border-image: url(:/images/store/HotSection-Background) 0 0 0 0 repeat repeat;
+}
+QWidget:hover {
+//	background-color: @defaultLightGrayHighlightedColorHex;
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+@|Store/SectionWidget/NewSection/style|
+QWidget { 
+    background-color: @defaultLightGrayColorHex;
+	.@|_Block/Default/LightGray/Border/style|
+	background-image: url(:/images/store/NewSection-Background);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+QWidget:hover {
+//	background-color: @defaultLightGrayHighlightedColorHex;
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+@|Store/SectionWidget/SectionTitle/style|
+QWidget {
+//    background-color: #a3a3a3;
+    margin: 5px 0 0 0;
+    padding: 5px;
+}
+
+@|Store/SectionWidget/PopularSection/style|
+QWidget { 
+    background-color: @defaultLightGrayColorHex;
+	.@|_Block/Default/LightGray/Border/style|
+	background-image: url(:/images/store/PopularSection-Background);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+QWidget:hover {
+//	background-color: @defaultLightGrayHighlightedColorHex;
+	.@|_Block/Default/DarkGray/Border/Hover/style|
+}
+
+@|Store/SectionTitleLable/Default/style|
+.@|Label/Large/LightGray/style|
+QLabel {
+//	background-color: @defaultLightGrayHighlightedColorHex;
+        color: defaultDarkGrayHighlightedColorHex;
+        margin: 10px 0 0 0;
+}
+
+//
+// # Store - app details page
+
+@|Store/AppDetails/ManagementSidebar/style|
+QWidget#sidebarWidget { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+	background-image: none;
+	
+	border-style: solid;
+	border-left-width: 1px;
+	border-left-color: @defaultLightGrayColorHex;
+}
+
+@|Store/AppDetails/RelatedMediaContainer/style|
+QWidget#thumbnailBackgroundWidget { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+	background-image: none;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: @defaultLightGrayColorHex;
+	border-radius: 5px;
+}
+
+@|Default/InContentNavigationWidget/style|
+InContentNavigationWidget {
+    background-color: @defaultLightGrayGradientStartColorHex;
+	background-image: none;
+	
+	border-style: none;
+//	border-bottom-width: 1px;
+//	border-bottom-color: @defaultLightGrayColorHex;
+}
+
+//
+// # MyApps page
+@|MyApps/MainWidget/style|
+MyAppsPage { 
+    background-color: @defaultLightGrayBackgroundColorHex;
+	background-image: url(:/images/myApps/MyAppsPage-Background);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@|MyApps/AppManagementSidebar/style|
+MyAppsManagementSidebar { 
+    background-color: @defaultLightGrayHighlightedBackgroundColorHex;
+	background-image: none;
+	
+	border-style: solid;
+	border-left-width: 1px;
+	border-left-color: @defaultLightGrayColorHex;
+}
+
+// # Common widgets collection
+
+// link-button: it looks and behaves like a normal text but through QPushButton
+// 	so you can quickly implement the required "open this url" method
+@|Common/LinkButton/style|
+UrlButton {
+	border-style: none;
+	background: transparent;
+	color: @defaultDarkGrayTextColorHex;
+	text-align: left;
+	text-decoration: underline;
+}
+
+UrlButton:hover {
+	color: @defaultDarkGrayHighlightedTextColorHex;
+}

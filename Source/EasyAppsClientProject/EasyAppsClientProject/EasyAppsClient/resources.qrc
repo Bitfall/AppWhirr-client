@@ -1,0 +1,72 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="AppIconOptionsButtonBackgroundImage">Resources/images/button-test-background.png</file>
+        <file alias="AppIconExpandCollapseButton-Collapse">Resources/images/simple_green_minus_button_image.png</file>
+        <file alias="AppIconExpandCollapseButton-Expand">Resources/images/simple_green_plus_button_image.png</file>
+        <file alias="navigation_background">Resources/images/navigation_background.png</file>
+        <file alias="navigation_logo">Resources/images/navigation_logo.png</file>
+        <file alias="sidebar_logo">Resources/images/sidebar_logo.png</file>
+        <file alias="Run-Button-Background">Resources/images/Run-Button-Background.png</file>
+        <file alias="Run-Button-Background-Pushed">Resources/images/Run-Button-Background-Pushed.png</file>
+        <file alias="ApplicationStoreAppIcon-Background-Default">Resources/images/application_container_background-default.png</file>
+        <file alias="ApplicationStoreAppIcon-Background-Grabbed">Resources/images/application_container_background-grabbed.png</file>
+        <file alias="system_tray_icon">Resources/images/appwhirr_icon_32.png</file>
+        <file alias="grabbed_app_icon">Resources/images/appwhirr_icon_128.png</file>
+        <file alias="app_browser_large_icon">Resources/images/appwhirr_icon_256.png</file>
+        <file alias="BusyIndicator-Spinning">Resources/images/busy_indicator_spinning.png</file>
+        <file alias="GuiConfigurations">Resources/guiconfig.uiconf</file>
+        <file alias="ClientSelfUpdateAvailableNotificationWidget-Background">Resources/images/clientSelfUpdateAvailableNotificationBackground.png</file>
+        <file alias="search-icon">Resources/images/search-icon.png</file>
+        <file alias="badge">Resources/images/badge.png</file>
+        <file alias="appwhirr_tos">Resources/appwhirr_tos.html</file>
+    </qresource>
+    <qresource prefix="/login">
+        <file alias="title">Resources/images/login_title.png</file>
+        <file alias="background">Resources/images/login_background.png</file>
+        <file alias="logo">Resources/images/login_logo.png</file>
+    </qresource>
+    <qresource prefix="/baseDatabases">
+        <file alias="UsersBaseDatabase">Resources/baseDatabases/UsersBaseDatabase.sqlite</file>
+    </qresource>
+    <qresource prefix="/rating">
+        <file alias="star">Resources/images/star.png</file>
+    </qresource>
+    <qresource prefix="/web">
+        <file alias="jquery.tweet.js">Resources/html/jquery.tweet.js</file>
+        <file alias="jquery-1.6.1.min.js">Resources/html/jquery/jquery-1.6.1.min.js</file>
+        <file alias="jquery.tweet.css">Resources/html/jquery.tweet.css</file>
+        <file alias="twitter">Resources/html/twitter.html</file>
+    </qresource>
+    <qresource prefix="/help">
+        <file alias="HowToCreateDesktopShortcut">Resources/images/help/help1.jpg</file>
+        <file alias="HowToUseBasics">Resources/images/help/test-helpItem2-main.jpg</file>
+    </qresource>
+    <qresource prefix="/headerbar">
+        <file alias="CloseButton-Normal">Resources/images/header-close-button-normal.png</file>
+        <file alias="MaximizeButton-Normal">Resources/images/header-maximize-button-normal.png</file>
+        <file alias="MinimizeButton-Normal">Resources/images/header-minimize-button-normal.png</file>
+        <file alias="CloseButton-Hover">Resources/images/header-close-button-hover.png</file>
+        <file alias="MaximizeButton-Hover">Resources/images/header-maximize-button-hover.png</file>
+        <file alias="MinimizeButton-Hover">Resources/images/header-minimize-button-hover.png</file>
+    </qresource>
+    <qresource prefix="/images/checkbox">
+        <file alias="Checkbox-Checked-Normal">Resources/images/checkbox/checkbox-checked.png</file>
+        <file alias="Checkbox-Unchecked-Normal">Resources/images/checkbox/checkbox-default.png</file>
+    </qresource>
+    <qresource prefix="/images/appSubStateIconImages">
+        <file alias="UpdateAvailable-Normal">Resources/images/appSubStatesIconImages/updateAvailable.png</file>
+        <file alias="NotAvailableOnThisPlatform-Normal">Resources/images/appSubStatesIconImages/notSupportedOnThisPlatform.png</file>
+        <file alias="AppRemovedFromTheSystem-Normal">Resources/images/appSubStatesIconImages/removedFromTheSystem.png</file>
+    </qresource>
+    <qresource prefix="/images/store">
+        <file alias="HotSection-Background">Resources/images/store/hotSection-background.png</file>
+        <file alias="NewSection-Background">Resources/images/store/newSection-background.png</file>
+        <file alias="PopularSection-Background">Resources/images/store/popularSection-background.png</file>
+        <file alias="VideoThumbnail-IndicatorCover">Resources/images/store/thumb-video-play-cover.png</file>
+        <file alias="AppGrabbedIndicator-Grabbed">Resources/images/store/appGrabbedIndicatorIcon-grabbed.png</file>
+        <file alias="AppGrabbedIndicator-Installed">Resources/images/store/appGrabbedIndicatorIcon-installed.png</file>
+    </qresource>
+    <qresource prefix="/images/myApps">
+        <file alias="MyAppsPage-Background">Resources/images/myApps/myAppsPage-Background.png</file>
+    </qresource>
+</RCC>

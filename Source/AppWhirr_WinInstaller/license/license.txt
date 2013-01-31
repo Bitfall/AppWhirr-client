@@ -1,0 +1,27 @@
+AppWhirr Terms of Service
+
+By installing the AppWhirr Client Application or registering an APPWHIRR SERVICE account or otherwise using the APPWHIRR SERVICE (which may include the AppWhirr Web Site, the AppWhirr Client Application and the Contents of the service) you are agreeing to be bound by this Terms of Service and any additional conditions specified for parts of the APPWHIRR SERVICE (for example the AppWhirr Developer Site registration extends these conditions). If you do not agree to any of these terms please do not register an AppWhirr Account, install the AppWhirr Client Application or otherwise use the APPWHIRR SERVICE.
+
+This license agreement represents the entire agreement concerning the APPWHIRR SERVICE between you and BITFALL, unless otherwise specified or extended with additional conditions and it supersedes any prior proposal, representation, or understanding between the parties.
+
+Changes and Updates: BITFALL reserves the right to modify or discontinue, temporarily or permanently the APPWHIRR SERVICE or any part of it with or without notice. Furthermore BITFALL reserves the right to modify the conditions of the Terms of Service and you agree to be bound by such modifications or revisions.
+
+The APPWHIRR SERVICE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The APPWHIRR SERVICE and every Software and Content downloaded from the APPWHIRR SERVICE is licensed, not sold. To download Software or any Content from APPWHIRR SERVICE you must be registered to the APPWHIRR SERVICE and provide accurate information. Additionally by downloading a Software from the APPWHIRR SERVICE you have to accept the conditions of the Software if provided. 
+
+1. TERMINATION
+In case of non-accurate account information or in case of violation of Terms of Service conditions your account may be suspended or removed without notice and without further formality.
+
+2. RESPONSIBILITY FOR ACTIVITIES UNDER YOUR ACCOUNT
+You are entirely responsible for any and all activities that occur under your account. You agree to notify BITFALL immediately of any unauthorized use of your account. BITFALL expressly disclaims any and all liability in connection with any Content submitted by a User, including but not limited to User account information, commenting and forum participation.
+
+3. PROHIBITION ON REVERSE ENGINEERING, DECOMPILATION, DISASSEMBLY AND CONTENT TRANSFER MODIFICATION
+You may not reverse engineer, decompile, or disassemble any parts of the APPWHIRR SERVICE, and you may not modify communication or content transfer from and to the APPWHIRR SERVICE, except and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation.
+
+4. COPYRIGHT
+All title, including but not limited to copyrights, in and to the APPWHIRR SERVICE and any copies thereof are owned by BITFALL or its suppliers. All title and intellectual property rights in and to the content which may be accessed through use of the APPWHIRR SERVICE is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties. This EULA grants you no rights to use such content. All rights not expressly granted are reserved by BITFALL.
+
+5. NO WARRANTIES
+BITFALL expressly disclaims any warranty for the APPWHIRR SERVICE. The APPWHIRR SERVICE is provided 'As Is' without any express or implied warranty of any kind, including but not limited to any warranties of merchantability, noninfringement, or fitness of a particular purpose. BITFALL does not warrant or assume responsibility for the accuracy or completeness of any information, text, graphics, links or other items of the APPWHIRR SERVICE. BITFALL makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb, or other such computer program. BITFALL further expressly disclaims any warranty or representation to Authorized Users or to any third party.
+
+6. LIMITATION OF LIABILITY
+In no event shall BITFALL be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) rising out of 'Authorized Users' use of or inability to use the APPWHIRR SERVICE, even if BITFALL has been advised of the possibility of such damages. In no event will BITFALL be liable for loss of data or for indirect, special, incidental, consequential (including lost profit), or other damages based in contract, tort or otherwise. APPWHIRR shall have no liability with respect to the content of the APPWHIRR SERVICE or any part thereof, including but not limited to errors or omissions contained therein, libel, infringements of rights of publicity, privacy, trademark rights, business interruption, personal injury, loss of privacy, moral rights or the disclosure of confidential information. 

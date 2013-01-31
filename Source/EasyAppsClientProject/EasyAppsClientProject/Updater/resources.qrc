@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="progressBarBackground">Resources/progressBarBackground.png</file>
+        <file alias="progressBarIndicator">Resources/progressBarIndicator.png</file>
+        <file alias="lightLogo">Resources/logoLight.png</file>
+    </qresource>
+</RCC>
